@@ -1,4 +1,7 @@
 {
+  "overrides": {
+    "three-mesh-bvh": "0.8.0"
+  },
   "name": "moncy-portfolio",
   "private": true,
   "version": "0.0.0",
