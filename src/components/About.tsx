@@ -6,9 +6,7 @@ const About = () => {
       <div className="about-me">
         <h3 className="title">About Me</h3>
         <p className="para">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quis
-          dolores numquam iusto Ratione earum ducimus autem id iure pariatur
-          dolorum quae maiores.
+          High-performance Full Stack Developer with 1 year of professional experience building scalable web applications and real-time communication systems. Specialist in MERN/Next.js and Nest.js frameworks. Proven track record of architecting Turbo Repo monorepos and implementing WebRTC for video/audio.
         </p>
       </div>
     </div>

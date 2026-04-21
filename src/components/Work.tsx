@@ -53,21 +53,60 @@ const Work = () => {
           My <span>Work</span>
         </h2>
         <div className="work-flex">
-          {[...Array(6)].map((_value, index) => (
+          {[
+            {
+              name: "Eagle Sports Ground",
+              category: "Cricket Platform (MERN)",
+              tools: "Next.js, Turbo Repo, Node.js, MongoDB",
+              link: "https://eagle-sports-ground-frontend-match.vercel.app/",
+            },
+            {
+              name: "Astrology in Bharat",
+              category: "WebRTC Marketplace",
+              tools: "Node.js, Next.js, Turbo Repo, WebRTC, Socket.io",
+              link: "https://astrology-in-bharat-app-frontend-ad.vercel.app/",
+            },
+            {
+              name: "Jobish",
+              category: "Career Services",
+              tools: "Full Stack, Resume Generation, Lead Management",
+              link: "https://jobish-in.vercel.app/",
+            },
+            {
+              name: "Atlanta Courier",
+              category: "Logistics Application",
+              tools: "Logistics Booking, Tracking, Admin Dashboard",
+              link: "https://atlantacourier.in/",
+            },
+            {
+              name: "LMS Platform",
+              category: "Education Technology",
+              tools: "Course Streaming, Progress Tracking, CMS",
+              link: "#",
+            },
+            {
+              name: "CMS & WordPress",
+              category: "30+ CMS Projects",
+              tools: "WordPress, Custom Plugins, SEO, Performance",
+              link: "https://dgnbuild.com/",
+            },
+          ].map((project, index) => (
             <div className="work-box" key={index}>
               <div className="work-info">
                 <div className="work-title">
                   <h3>0{index + 1}</h3>
 
                   <div>
-                    <h4>Project Name</h4>
-                    <p>Category</p>
+                    <a href={project.link} target="_blank" rel="noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+                      <h4>{project.name}</h4>
+                    </a>
+                    <p>{project.category}</p>
                   </div>
                 </div>
                 <h4>Tools and features</h4>
-                <p>Javascript, TypeScript, React, Threejs</p>
+                <p>{project.tools}</p>
               </div>
-              <WorkImage image="/images/placeholder.webp" alt="" />
+              <WorkImage image="/images/placeholder.webp" alt={project.name} />
             </div>
           ))}
         </div>
