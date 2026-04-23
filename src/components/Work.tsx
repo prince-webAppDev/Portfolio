@@ -59,36 +59,42 @@ const Work = () => {
               category: "Cricket Platform (MERN)",
               tools: "Next.js, Turbo Repo, Node.js, MongoDB",
               link: "https://eagle-sports-ground-frontend-match.vercel.app/",
+              image: "/images/project/Eagle-Ground.png",
             },
             {
               name: "Astrology in Bharat",
               category: "WebRTC Marketplace",
               tools: "Node.js, Next.js, Turbo Repo, WebRTC, Socket.io",
               link: "https://astrology-in-bharat-app-frontend-ad.vercel.app/",
+              image: "/images/project/Astrology-in-Bharat.png",
             },
             {
               name: "Jobish",
               category: "Career Services",
               tools: "Full Stack, Resume Generation, Lead Management",
               link: "https://jobish-in.vercel.app/",
+              image: "/images/project/Jobish.png",
             },
             {
               name: "Atlanta Courier",
               category: "Logistics Application",
               tools: "Logistics Booking, Tracking, Admin Dashboard",
               link: "https://atlantacourier.in/",
+              image: "/images/project/Atlanta-Courier.png",
             },
             {
               name: "LMS Platform",
               category: "Education Technology",
               tools: "Course Streaming, Progress Tracking, CMS",
               link: "#",
+              image: "/images/placeholder.webp",
             },
             {
               name: "CMS & WordPress",
               category: "30+ CMS Projects",
               tools: "WordPress, Custom Plugins, SEO, Performance",
               link: "https://dgnbuild.com/",
+              image: "/images/placeholder.webp",
             },
           ].map((project, index) => (
             <div className="work-box" key={index}>
@@ -106,7 +112,7 @@ const Work = () => {
                 <h4>Tools and features</h4>
                 <p>{project.tools}</p>
               </div>
-              <WorkImage image="/images/placeholder.webp" alt={project.name} />
+              <WorkImage image={project.image} alt={project.name} />
             </div>
           ))}
         </div>
