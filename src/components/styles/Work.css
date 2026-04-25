@@ -154,57 +154,51 @@
     font-size: 15px;
   }
   .work-box {
-    width: 450px;
-    padding: 50px;
+    width: 400px;
+    padding: 40px;
   }
   .work-flex {
-    margin-left: -50px;
-    padding-right: 75px;
+    margin-left: -40px;
+    padding-right: 60px;
   }
   .work-section h2 {
     font-size: 50px;
   }
 }
-@media only screen and (max-width: 1400px) {
+
+@media only screen and (max-width: 768px) {
   .work-box {
-    width: 350px;
+    width: 320px;
     padding: 30px;
+    gap: 30px;
   }
   .work-flex {
-    margin-left: -30px;
-    padding-right: 45px;
+    margin-left: -20px;
+    padding-right: 40px;
+  }
+  .work-section h2 {
+    font-size: 35px;
+    margin-top: 50px;
+  }
+  .work-title h3 {
+    font-size: 30px;
+  }
+  .work-image img {
+    max-height: 200px;
   }
 }
 
-@media only screen and (max-height: 650px) {
-  .work-image img {
-    max-height: 200px;
-  }
-  .work-section h2 {
-    font-size: 40px;
-    margin-bottom: 20px;
-  }
-  .work-box {
-    gap: 20px;
-  }
-}
-/* @media only screen and (max-width: 900px) {
-  .work-image img {
-    max-height: 200px;
-  }
-  .work-section h2 {
-    font-size: 40px;
-    margin-bottom: 20px;
-  }
-  .work-box {
-    gap: 20px;
-  }
-} */
 @media only screen and (max-width: 1025px) {
   .work-container {
     align-content: normal;
   }
   .work-flex {
     height: auto;
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  .work-section {
+    height: 100svh; /* Use small viewport height for mobile */
   }
 }
+
