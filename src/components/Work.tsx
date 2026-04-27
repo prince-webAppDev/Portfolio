@@ -19,7 +19,8 @@ const Work = () => {
       ScrollTrigger.refresh();
 
       const getTranslateX = () => {
-        return flexRef.current ? flexRef.current.scrollWidth - window.innerWidth : 0;
+        if (!flexRef.current) return 0;
+        return flexRef.current.scrollWidth - window.innerWidth;
       };
 
       const mm = gsap.matchMedia();
