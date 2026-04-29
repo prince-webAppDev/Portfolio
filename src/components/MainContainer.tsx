@@ -1,5 +1,5 @@
 import { PropsWithChildren, useEffect, useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Cursor from "./Cursor";
 import Navbar from "./Navbar";
 import SocialIcons from "./SocialIcons";
@@ -10,6 +10,7 @@ import WorkPage from "../pages/WorkPage";
 import PlaceholderPage from "../pages/PlaceholderPage";
 
 const MainContainer = ({ children }: PropsWithChildren) => {
+  const location = useLocation();
   const [isDesktopView, setIsDesktopView] = useState<boolean>(
     window.innerWidth > 1024
   );
@@ -25,6 +26,8 @@ const MainContainer = ({ children }: PropsWithChildren) => {
       window.removeEventListener("resize", resizeHandler);
     };
   }, [isDesktopView]);
+
+  const isHome = location.pathname === "/";
 
   return (
     <div className="container-main">
@@ -46,7 +49,7 @@ const MainContainer = ({ children }: PropsWithChildren) => {
           </Routes>
         </div>
       </div>
-      {isDesktopView && children}
+      {isDesktopView && isHome && children}
     </div>
   );
 };

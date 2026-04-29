@@ -1,9 +1,19 @@
 .work-page {
   padding-top: 150px;
   padding-bottom: 100px;
+  height: auto !important;
   min-height: 100vh;
   background-color: var(--backgroundColor);
-  overflow-y: auto;
+  position: relative;
+  z-index: 10;
+  overflow: visible !important;
+}
+
+.work-container-inner {
+  width: var(--cWidth);
+  margin: 0 auto;
+  height: auto !important;
+  overflow: visible !important;
 }
 
 .work-header {
@@ -19,6 +29,10 @@
   margin-bottom: 20px;
 }
 
+.accent {
+  color: var(--accentColor);
+}
+
 .work-subtitle {
   font-size: 1.2rem;
   color: #777;
@@ -28,49 +42,24 @@
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 60px 40px;
+  gap: 80px 40px;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .project-card {
   display: flex;
   flex-direction: column;
   gap: 25px;
-  cursor: pointer;
 }
 
 .project-image-container {
   position: relative;
   width: 100%;
-  aspect-ratio: 16/10;
   border-radius: 15px;
   overflow: hidden;
   background: #151216;
   border: 1px solid rgba(255, 255, 255, 0.05);
-  transition: transform 0.5s cubic-bezier(0.2, 0, 0, 1);
-}
-
-.project-card:hover .project-image-container {
-  transform: scale(0.98);
-}
-
-.project-image-placeholder {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
-.project-image-placeholder img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.8s cubic-bezier(0.2, 0, 0, 1);
-}
-
-.project-card:hover .project-image-placeholder img {
-  transform: scale(1.1);
 }
 
 .project-info {
@@ -91,37 +80,23 @@
   font-size: 2rem;
   font-weight: 600;
   color: #fff;
+  margin: 0;
 }
 
 .project-desc {
   font-size: 1rem;
   color: #888;
   line-height: 1.5;
-  max-width: 90%;
+  margin: 0;
 }
 
-.project-tech {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-.tech-item {
-  font-size: 0.75rem;
-  padding: 4px 12px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
-  color: #666;
-}
-
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .projects-grid {
     grid-template-columns: 1fr;
     gap: 80px;
   }
   .project-name {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
 }
+

@@ -1,11 +1,12 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useLayoutEffect, useRef } from 'react';
 import { gsap } from 'gsap';
+import { smoother } from '../components/Navbar';
 import './styles/AboutPage.css';
 
 const AboutPage = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (containerRef.current) {
       const ctx = gsap.context(() => {
         gsap.from('.about-title', {
@@ -41,6 +42,10 @@ const AboutPage = () => {
           ease: 'back.out(1.7)',
           delay: 1.2
         });
+
+        if (smoother) {
+          smoother.refresh();
+        }
       }, containerRef);
       return () => ctx.revert();
     }
@@ -54,7 +59,7 @@ const AboutPage = () => {
 
   return (
     <div className="about-page" ref={containerRef}>
-      <div className="container1">
+      <div className="about-container-inner">
         <div className="about-grid">
           <div className="about-text-section">
             <h1 className="about-title">
