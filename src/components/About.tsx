@@ -27,6 +27,10 @@ const About = () => {
             Chess has taught me the strategic foresight I apply to architecting systems, while powerlifting keeps me disciplined and consistent in everything I build.
           </p>
 
+          <p className="para">
+            Currently, I am deep-diving into <strong>DevOps</strong> and <strong>Agentic AI</strong>. I'm focused on automating infrastructure and building autonomous AI agents that can solve complex, multi-step problems—pushing the boundaries of what's possible in modern software engineering.
+          </p>
+
           <div className="about-stats">
             <div className="stat-item">
               <h4>30+</h4>

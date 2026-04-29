@@ -1,16 +1,11 @@
-import { lazy, PropsWithChildren, Suspense, useEffect, useState } from "react";
-import About from "./About";
-import Career from "./Career";
-import Contact from "./Contact";
+import { PropsWithChildren, useEffect, useState } from "react";
+import { Routes, Route } from "react-router-dom";
 import Cursor from "./Cursor";
-import Landing from "./Landing";
 import Navbar from "./Navbar";
 import SocialIcons from "./SocialIcons";
-import WhatIDo from "./WhatIDo";
-import Work from "./Work";
 import setSplitText from "./utils/splitText";
-
-const TechStack = lazy(() => import("./TechStack"));
+import Home from "../pages/Home";
+import PlaceholderPage from "../pages/PlaceholderPage";
 
 const MainContainer = ({ children }: PropsWithChildren) => {
   const [isDesktopView, setIsDesktopView] = useState<boolean>(
@@ -36,19 +31,17 @@ const MainContainer = ({ children }: PropsWithChildren) => {
       <SocialIcons />
       <div id="smooth-wrapper">
         <div id="smooth-content">
-          <div className="container-main">
-            <Landing>{!isDesktopView && children}</Landing>
-            <About />
-            <WhatIDo />
-            <Career />
-            <Work />
-            {isDesktopView && (
-              <Suspense fallback={<div>Loading....</div>}>
-                <TechStack />
-              </Suspense>
-            )}
-            <Contact />
-          </div>
+          <Routes>
+            <Route
+              path="/"
+              element={<Home isDesktopView={isDesktopView}>{children}</Home>}
+            />
+            <Route path="/about" element={<PlaceholderPage name="About" />} />
+            <Route path="/work" element={<PlaceholderPage name="Work" />} />
+            <Route path="/contact" element={<PlaceholderPage name="Contact" />} />
+            <Route path="/career" element={<PlaceholderPage name="Career" />} />
+            <Route path="/what-i-do" element={<PlaceholderPage name="What I Do" />} />
+          </Routes>
         </div>
       </div>
       {isDesktopView && children}

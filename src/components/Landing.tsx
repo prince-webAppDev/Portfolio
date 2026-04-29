@@ -24,6 +24,9 @@ const Landing = ({ children }: PropsWithChildren) => {
               <div className="landing-h2-info">Developer</div>
               <div className="landing-h2-info-1">Backend</div>
             </h2>
+            <h2 style={{ marginTop: '10px', opacity: 0.8, fontSize: '1.2rem', fontWeight: 300, letterSpacing: '2px' }}>
+              DevOps & Agentic AI Enthusiast
+            </h2>
           </div>
         </div>
         {children}

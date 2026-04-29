@@ -37,12 +37,12 @@
   height: 500px;
   margin-left: 200px;
   position: relative;
-  display: none;
+  display: flex;
 }
 .what-content {
   width: 450px;
-  height: 33%;
-  min-height: 50%;
+  height: 33.33%;
+  min-height: 33.33%;
   transition: 0.5s;
   /* border: 0.5px dashed rgba(255, 255, 255, 0.3); */
   position: relative;
@@ -59,7 +59,7 @@
 .what-noTouch:hover ~ .what-content,
 .what-box-in:hover .what-noTouch:not(:hover),
 .what-content.what-sibling {
-  min-height: 33%;
+  min-height: 16.5%;
   padding: 10px 50px;
 }
 .what-content h3 {

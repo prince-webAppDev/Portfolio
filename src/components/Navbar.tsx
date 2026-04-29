@@ -3,12 +3,15 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import HoverLinks from "./HoverLinks";
 import { gsap } from "gsap";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
+import { Link, useLocation } from "react-router-dom";
 import "./styles/Navbar.css";
 
 gsap.registerPlugin(ScrollSmoother, ScrollTrigger);
 export let smoother: ScrollSmoother;
 
 const Navbar = () => {
+  const location = useLocation();
+
   useEffect(() => {
     smoother = ScrollSmoother.create({
       wrapper: "#smooth-wrapper",
@@ -23,27 +26,24 @@ const Navbar = () => {
     smoother.scrollTop(0);
     smoother.paused(true);
 
-    let links = document.querySelectorAll(".header a[data-href]");
-    links.forEach((elem) => {
-      let element = elem as HTMLAnchorElement;
-      element.addEventListener("click", (e) => {
-        e.preventDefault();
-        let section = element.getAttribute("data-href");
-        if (section && smoother) {
-          smoother.scrollTo(section, true, "top top");
-        }
-      });
-    });
     window.addEventListener("resize", () => {
       ScrollSmoother.refresh(true);
     });
   }, []);
+
+  useEffect(() => {
+    if (smoother) {
+      smoother.scrollTop(0);
+      ScrollSmoother.refresh(true);
+    }
+  }, [location.pathname]);
+
   return (
     <>
       <div className="header">
-        <a href="/#" className="navbar-title" data-cursor="disable">
+        <Link to="/" className="navbar-title" data-cursor="disable">
           PRINCE
-        </a>
+        </Link>
         <a
           href="mailto:prince3328july@gmail.com"
           className="navbar-connect"
@@ -53,19 +53,19 @@ const Navbar = () => {
         </a>
         <ul>
           <li>
-            <a data-href="#about" href="#about">
+            <Link to="/about">
               <HoverLinks text="ABOUT" />
-            </a>
+            </Link>
           </li>
           <li>
-            <a data-href="#work" href="#work">
+            <Link to="/work">
               <HoverLinks text="WORK" />
-            </a>
+            </Link>
           </li>
           <li>
-            <a data-href="#contact" href="#contact">
+            <Link to="/contact">
               <HoverLinks text="CONTACT" />
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
