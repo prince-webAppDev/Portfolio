@@ -58,18 +58,25 @@ const AboutPage = () => {
         <div className="about-grid">
           <div className="about-text-section">
             <h1 className="about-title">
-              Crafting Digital <span className="accent">Experiences</span>
+              Engineering <span className="accent">Excellence</span>
             </h1>
             
             <div className="about-content">
               <p>
-                I'm Prince, a Full-Stack Developer with a passion for building 
-                highly interactive and visually stunning web applications. 
-                My focus lies at the intersection of performance and aesthetics.
+                I'm Prince Patel, a Full-Stack Software Engineer with a <strong>B.Sc in Graphics and Web Designing</strong>. 
+                I bridge the gap between complex backend logic and visually stunning user experiences, 
+                leveraging a unique eye for design to build high-performance applications.
               </p>
               <p>
-                With expertise in modern JavaScript frameworks and 3D web technologies, 
-                I bridge the gap between complex backend logic and immersive frontend interfaces.
+                Currently, I lead the technical architecture for the <strong>Astrology in Bharat</strong> ecosystem—a massive 
+                multi-platform project involving 7+ specialized dashboards, real-time 
+                communication, and complex wallet/payment systems.
+              </p>
+              <p>
+                With a background of delivering <strong>30+ CMS platforms</strong> and <strong>15+ custom-coded enterprise apps</strong>, 
+                I specialize in crafting robust systems with <strong>NestJS</strong>, <strong>PostgreSQL</strong>, and <strong>React</strong>. 
+                I am also a <strong>National Level Chess Player</strong> and a <strong>Powerlifter</strong>, disciplines 
+                that fuel my strategic foresight and consistency in software engineering.
               </p>
               
               <div className="skills-container">
@@ -85,18 +92,22 @@ const AboutPage = () => {
 
           <div className="about-visual-section">
             <div className="about-image-placeholder">
-              <span className="placeholder-text">YOUR IMAGE HERE</span>
-              {/* <img src="/path-to-your-image.jpg" alt="Prince" /> */}
+              <span className="placeholder-text">PRINCE PATEL</span>
+              {/* <img src="/images/about-me.png" alt="Prince Patel" /> */}
               <div className="image-overlay"></div>
             </div>
             <div className="about-stats">
               <div className="stat-item">
-                <span className="stat-number">3+</span>
-                <span className="stat-label">Years Exp.</span>
+                <span className="stat-number">30+</span>
+                <span className="stat-label">CMS Sites</span>
               </div>
               <div className="stat-item">
-                <span className="stat-number">20+</span>
-                <span className="stat-label">Projects</span>
+                <span className="stat-number">15+</span>
+                <span className="stat-label">Custom Apps</span>
+              </div>
+              <div className="stat-item">
+                <span className="stat-number">Top</span>
+                <span className="stat-label">Chess Rank</span>
               </div>
             </div>
           </div>

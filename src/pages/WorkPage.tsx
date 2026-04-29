@@ -11,27 +11,27 @@ const WorkPage = () => {
   const projects = [
     {
       title: 'Astrology in Bharat',
-      category: 'Full-Stack Development',
-      description: 'A comprehensive platform for astrology services, featuring real-time consultations and e-commerce.',
-      tech: ['NestJS', 'React', 'TypeScript', 'Socket.io', 'PostgreSQL']
+      category: 'WebRTC Marketplace',
+      description: 'A comprehensive platform for astrology services, featuring real-time WebRTC consultations, 7+ specialized dashboards, and a robust e-commerce engine.',
+      tech: ['Turborepo', 'Next.js', 'NestJS', 'Socket.io', 'WebRTC', 'PostgreSQL']
     },
     {
-      title: 'Creative Portfolio',
-      category: '3D & Motion Graphics',
-      description: 'An immersive 3D portfolio built with Three.js and GSAP to showcase creative works.',
-      tech: ['Three.js', 'React Three Fiber', 'GSAP', 'Vite']
+      title: 'Eagle Sports Ground',
+      category: 'Cricket Platform (MERN)',
+      description: 'A dedicated platform for cricket enthusiasts, managing matches, ground bookings, and player statistics with a seamless user interface.',
+      tech: ['Next.js', 'Node.js', 'MongoDB', 'Tailwind CSS', 'Turborepo']
     },
     {
-      title: 'E-commerce Engine',
-      category: 'Web Application',
-      description: 'Scalable e-commerce solution with advanced filtering, payment integration, and admin dashboard.',
-      tech: ['Next.js', 'Tailwind CSS', 'Redux', 'Razorpay']
+      title: 'Jobish Career Services',
+      category: 'Full-Stack Application',
+      description: 'A career-focused platform providing automated resume generation, lead management, and job application tracking for professionals.',
+      tech: ['React', 'Node.js', 'Express', 'Lead Management', 'PDF Generation']
     },
     {
-      title: 'Real-time Dashboards',
-      category: 'Data Visualization',
-      description: 'Complex monitoring systems for agents and experts with live data synchronization.',
-      tech: ['React', 'Socket.io', 'Chart.js', 'Node.js']
+      title: 'Atlanta Courier',
+      category: 'Logistics Application',
+      description: 'An end-to-end logistics solution featuring real-time package tracking, booking management, and a comprehensive admin dashboard for operations.',
+      tech: ['React', 'Node.js', 'Google Maps API', 'Admin Dashboard']
     }
   ];
 
