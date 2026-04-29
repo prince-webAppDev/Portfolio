@@ -5,6 +5,8 @@ import Navbar from "./Navbar";
 import SocialIcons from "./SocialIcons";
 import setSplitText from "./utils/splitText";
 import Home from "../pages/Home";
+import AboutPage from "../pages/AboutPage";
+import WorkPage from "../pages/WorkPage";
 import PlaceholderPage from "../pages/PlaceholderPage";
 
 const MainContainer = ({ children }: PropsWithChildren) => {
@@ -36,8 +38,8 @@ const MainContainer = ({ children }: PropsWithChildren) => {
               path="/"
               element={<Home isDesktopView={isDesktopView}>{children}</Home>}
             />
-            <Route path="/about" element={<PlaceholderPage name="About" />} />
-            <Route path="/work" element={<PlaceholderPage name="Work" />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/work" element={<WorkPage />} />
             <Route path="/contact" element={<PlaceholderPage name="Contact" />} />
             <Route path="/career" element={<PlaceholderPage name="Career" />} />
             <Route path="/what-i-do" element={<PlaceholderPage name="What I Do" />} />
