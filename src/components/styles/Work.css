@@ -2,101 +2,115 @@
   margin-top: 100px;
   font-size: 70px;
   font-weight: 500;
+  margin-bottom: 50px;
 }
+
 .work-section h2 > span {
   color: var(--accentColor);
 }
+
 .work-section {
   transition: 0s;
-  height: 100vh;
+  height: auto;
   box-sizing: border-box;
   will-change: transform;
+  padding-bottom: 100px;
 }
+
 .work-container {
   margin: auto;
   display: flex;
   flex-direction: column;
-  height: 100%;
-  align-content: stretch;
+  height: auto;
 }
+
 .work-flex {
-  width: max-content;
-  display: flex;
-  height: 100%;
-  margin-left: -80px;
-  padding-right: 120px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0; /* We'll use borders for the grid look */
   position: relative;
-  will-change: transform;
+  border-top: 1px solid #363636;
+  border-left: 1px solid #363636;
 }
+
 .work-box {
-  padding: 80px;
+  padding: 60px;
   display: flex;
   flex-direction: column;
-  width: 600px;
   box-sizing: border-box;
   border-right: 1px solid #363636;
-  flex-shrink: 0;
-  gap: 50px;
-  justify-content: start;
+  border-bottom: 1px solid #363636;
+  gap: 40px;
+  justify-content: space-between;
+  transition: background-color 0.3s ease;
 }
-.work-flex .work-box:nth-child(even) {
+
+.work-box:hover {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+/* Alternate layouts for variety */
+.work-box:nth-child(even) {
   flex-direction: column-reverse;
 }
-.work-flex::before,
-.work-flex::after {
-  content: "";
-  width: 100%;
-  height: 1px;
-  background-color: #363636;
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-.work-flex::after {
-  top: 100%;
-}
+
 .work-title {
   justify-content: space-between;
   display: flex;
   width: 100%;
   margin-bottom: 20px;
 }
+
 .work-title > div {
   text-align: right;
 }
+
 .work-title h3 {
   font-size: 50px;
   line-height: 50px;
   margin: 0;
   font-weight: 600;
+  opacity: 0.2;
 }
 
 .work-info h4 {
-  font-size: 18px;
+  font-size: 24px;
   font-weight: 400;
   margin: 0;
+  color: #fff;
 }
+
 .work-info p {
   font-weight: 200;
   color: #adacac;
   margin: 0;
-  margin-top: 3px;
+  margin-top: 5px;
+  font-size: 16px;
 }
+
 .work-info > p {
-  width: 90%;
+  width: 100%;
 }
+
 .work-image {
   display: flex;
   width: 100%;
   justify-content: center;
+  overflow: hidden;
+  border-radius: 12px;
 }
+
 .work-image-in {
   position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
 }
+
 .work-link {
   position: absolute;
-  bottom: 10px;
-  right: 10px;
+  bottom: 20px;
+  right: 20px;
   background-color: var(--backgroundColor);
   width: 50px;
   border-radius: 50px;
@@ -109,13 +123,13 @@
     inset 0px 0px 10px 0px #393939;
   transition: 0.3s;
   opacity: 0;
+  z-index: 2;
 }
-.work-image a:hover {
-  color: inherit;
-}
-.work-image a:hover .work-link {
+
+.work-image-in:hover .work-link {
   opacity: 1;
 }
+
 .work-image video {
   position: absolute;
   width: 100%;
@@ -125,80 +139,56 @@
   background-color: #000;
   object-fit: cover;
 }
+
 .work-image img {
-  max-width: 100%;
-  max-height: 350px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
 }
-@media only screen and (max-height: 900px) {
-  .work-image img {
-    max-height: 250px;
-  }
-  .work-box {
-    padding-top: 40px;
-    padding-bottom: 40px;
-  }
-  .work-section h2 {
-    font-size: 60px;
-    margin-bottom: 30px;
-    margin-top: 70px;
-  }
+
+.work-image-in:hover img {
+  transform: scale(1.05);
 }
-@media only screen and (max-width: 1400px) {
-  .work-title h3 {
-    font-size: 35px;
-  }
-  .work-info p {
-    font-size: 13px;
-  }
-  .work-info h4 {
-    font-size: 15px;
-  }
+
+@media only screen and (max-width: 1200px) {
   .work-box {
-    width: 400px;
     padding: 40px;
   }
+  .work-info h4 {
+    font-size: 20px;
+  }
+  .work-title h3 {
+    font-size: 40px;
+  }
+}
+
+@media only screen and (max-width: 992px) {
   .work-flex {
-    margin-left: -40px;
-    padding-right: 60px;
+    grid-template-columns: 1fr;
   }
   .work-section h2 {
     font-size: 50px;
   }
+  .work-box:nth-child(even) {
+    flex-direction: column; /* Back to normal for single column */
+  }
 }
 
 @media only screen and (max-width: 768px) {
-  .work-box {
-    width: 320px;
-    padding: 30px;
-    gap: 30px;
-  }
-  .work-flex {
-    margin-left: -20px;
-    padding-right: 40px;
-  }
   .work-section h2 {
     font-size: 35px;
     margin-top: 50px;
+    margin-bottom: 30px;
+  }
+  .work-box {
+    padding: 30px;
+    gap: 30px;
   }
   .work-title h3 {
     font-size: 30px;
   }
-  .work-image img {
-    max-height: 200px;
+  .work-info h4 {
+    font-size: 18px;
   }
 }
-
-@media only screen and (max-width: 1025px) {
-  .work-container {
-    align-content: normal;
-  }
-  .work-flex {
-    height: auto;
-    display: flex;
-    flex-wrap: nowrap;
-  }
-  .work-section {
-    height: 100svh; /* Use small viewport height for mobile */
-  }
-}
-

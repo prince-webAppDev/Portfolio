@@ -11,45 +11,11 @@ const Work = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const flexRef = useRef<HTMLDivElement>(null);
 
-  useGSAP(
-    () => {
-      if (!sectionRef.current || !flexRef.current) return;
+  useGSAP(() => {
+    // Refresh ScrollTrigger to account for the new vertical layout height
+    ScrollTrigger.refresh();
+  }, { scope: sectionRef });
 
-      // Small delay to ensure all images/layout are settled
-      ScrollTrigger.refresh();
-
-      const getTranslateX = () => {
-        if (!flexRef.current) return 0;
-        return flexRef.current.scrollWidth - window.innerWidth;
-      };
-
-      const mm = gsap.matchMedia();
-
-      mm.add("(min-width: 0px)", () => {
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top top",
-            end: () => `+=${getTranslateX()}`,
-            scrub: 1,
-            pin: true,
-            invalidateOnRefresh: true,
-            anticipatePin: 1,
-          },
-        });
-
-        tl.to(flexRef.current, {
-          x: () => -getTranslateX(),
-          ease: "none",
-        });
-
-        return () => {
-          tl.kill();
-        };
-      });
-    },
-    { scope: sectionRef }
-  );
 
   return (
     <div className="work-section" id="work" ref={sectionRef}>
