@@ -1,98 +1,105 @@
-.work-section h2 {
-  margin-top: 100px;
-  font-size: 70px;
-  font-weight: 500;
-  margin-bottom: 50px;
-}
-
-.work-section h2 > span {
-  color: var(--accentColor);
-}
-
-.work-section {
-  transition: 0s;
-  height: auto;
-  box-sizing: border-box;
-  will-change: transform;
+.work-section-comp {
+  padding-top: 100px;
   padding-bottom: 100px;
-}
-
-.work-container {
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  height: auto;
-}
-
-.work-flex {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0; /* We'll use borders for the grid look */
+  height: auto !important;
+  background-color: var(--backgroundColor);
   position: relative;
-  border-top: 1px solid #363636;
-  border-left: 1px solid #363636;
+  z-index: 10;
+  overflow: visible !important;
 }
 
-.work-box {
-  padding: 60px;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-  border-right: 1px solid #363636;
-  border-bottom: 1px solid #363636;
-  gap: 40px;
-  justify-content: space-between;
-  transition: background-color 0.3s ease;
+.work-container-inner {
+  width: var(--cWidth);
+  margin: 0 auto;
+  height: auto !important;
+  overflow: visible !important;
 }
 
-.work-box:hover {
-  background-color: rgba(255, 255, 255, 0.02);
+.work-header-comp {
+  margin-bottom: 100px;
+  text-align: center;
 }
 
-/* Alternate layouts for variety */
-.work-box:nth-child(even) {
-  flex-direction: column-reverse;
-}
-
-.work-title {
-  justify-content: space-between;
-  display: flex;
-  width: 100%;
+.work-title-comp {
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1;
   margin-bottom: 20px;
 }
 
-.work-title > div {
-  text-align: right;
+.accent {
+  color: var(--accentColor);
 }
 
-.work-title h3 {
-  font-size: 50px;
-  line-height: 50px;
-  margin: 0;
-  font-weight: 600;
-  opacity: 0.2;
+.work-subtitle-comp {
+  font-size: 1.2rem;
+  color: #777;
+  letter-spacing: 1px;
 }
 
-.work-info h4 {
-  font-size: 24px;
-  font-weight: 400;
-  margin: 0;
-  color: #fff;
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 80px 40px;
+  width: 90%;
+  margin: 0 auto;
 }
 
-.work-info p {
-  font-weight: 200;
-  color: #adacac;
-  margin: 0;
-  margin-top: 5px;
-  font-size: 16px;
+.project-card {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
 }
 
-.work-info > p {
+.project-image-container {
+  position: relative;
   width: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+  background: #151216;
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+.project-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.project-category {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accentColor);
+  font-weight: 600;
+}
+
+.project-name {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+}
+
+.project-desc {
+  font-size: 1rem;
+  color: #888;
+  line-height: 1.5;
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 80px;
+  }
+  .project-name {
+    font-size: 1.8rem;
+  }
+}
+
+/* WorkImage component styles */
 .work-image {
   display: flex;
   width: 100%;
@@ -103,6 +110,7 @@
 
 .work-image-in {
   position: relative;
+  display: block;
   width: 100%;
   aspect-ratio: 16/9;
 }
@@ -124,6 +132,7 @@
   transition: 0.3s;
   opacity: 0;
   z-index: 2;
+  color: #fff;
 }
 
 .work-image-in:hover .work-link {
@@ -149,46 +158,4 @@
 
 .work-image-in:hover img {
   transform: scale(1.05);
-}
-
-@media only screen and (max-width: 1200px) {
-  .work-box {
-    padding: 40px;
-  }
-  .work-info h4 {
-    font-size: 20px;
-  }
-  .work-title h3 {
-    font-size: 40px;
-  }
-}
-
-@media only screen and (max-width: 992px) {
-  .work-flex {
-    grid-template-columns: 1fr;
-  }
-  .work-section h2 {
-    font-size: 50px;
-  }
-  .work-box:nth-child(even) {
-    flex-direction: column; /* Back to normal for single column */
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .work-section h2 {
-    font-size: 35px;
-    margin-top: 50px;
-    margin-bottom: 30px;
-  }
-  .work-box {
-    padding: 30px;
-    gap: 30px;
-  }
-  .work-title h3 {
-    font-size: 30px;
-  }
-  .work-info h4 {
-    font-size: 18px;
-  }
 }
