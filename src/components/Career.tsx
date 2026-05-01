@@ -15,37 +15,37 @@ const Career = () => {
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Full Stack Developer</h4>
-                <h5>Professional Projects</h5>
-              </div>
-              <h3>2023</h3>
-            </div>
-            <p>
-              Architected high-concurrency marketplaces and real-time communication systems using Turbo Repo and WebRTC. Delivered scalable applications including Jobish and Astrology in Bharat.
-            </p>
-          </div>
-          <div className="career-info-box">
-            <div className="career-info-in">
-              <div className="career-role">
-                <h4>CMS Developer</h4>
-                <h5>Freelance</h5>
+                <h4>B.Sc. in Graphic and Web Designing</h4>
+                <h5>CGC Landran, Mohali</h5>
               </div>
               <h3>2022</h3>
             </div>
             <p>
-              Successfully delivered 30+ professional websites using WordPress, focusing on performance, custom UI, and SEO. Developed custom plugins to automate professional workflows.
+              Started my academic journey in Graphics and Web Designing at CGC Landran, laying the foundation for bridging the gap between complex logic and stunning user experiences.
             </p>
           </div>
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>B.Sc. in Graphic and Web Designing</h4>
-                <h5>CGC Landran, Mohali</h5>
+                <h4>MERN Stack Developer</h4>
+                <h5>RG Startup</h5>
+              </div>
+              <h3>2025</h3>
+            </div>
+            <p>
+              Joined RG Startup as a MERN Stack Developer, focusing on building scalable web applications and high-performance technical architectures for modern enterprise solutions.
+            </p>
+          </div>
+          <div className="career-info-box">
+            <div className="career-info-in">
+              <div className="career-role">
+                <h4>Full Stack + CMS Developer</h4>
+                <h5>Professional Projects</h5>
               </div>
               <h3>NOW</h3>
             </div>
             <p>
-              Currently pursuing degree (2022 – 2025) while working on advanced full-stack implementations and AI-assisted development (Vibe Coding).
+              Currently leading technical architecture for massive ecosystems like Astrology in Bharat, while specializing in crafting robust systems with NestJS, PostgreSQL, and React.
             </p>
           </div>
         </div>
